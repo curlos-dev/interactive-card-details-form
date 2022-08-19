@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CardValidator from './utils/CardValidator'
+import CardGraphicMobile from './components/CardGraphicMobile'
 import CardInputField from './components/CardInputField'
 import ExpirationDateField from './components/ExpirationDateField'
 
@@ -57,12 +58,12 @@ const App = () => {
   return (
     <div className="font-['Space_Grotesk'] text-[12px]">
       <div className="">
-
+        <CardGraphicMobile cardNumber={cardNumber} cardholderName={cardholderName} expirationMonth={expirationMonth} expirationYear={expirationYear} />
       </div>
 
-      <div className="p-10 flex flex-col gap-4">
+      <div className="p-6 flex flex-col gap-4">
         <CardInputField type="text" name={'cardholderName'} title={'CARDHOLDER NAME'} placeholder={'e.g. Jane Appleseed'} inputObject={cardholderName} handleInputFieldChange={handleInputFieldChange} />
-        <CardInputField type="text" name={'cardNumber'} title={'CARD NUMBER'} placeholder={'e.g. 1234 5678 9123 0000'} inputObject={cardholderName} handleInputFieldChange={handleInputFieldChange} />
+        <CardInputField type="text" name={'cardNumber'} title={'CARD NUMBER'} placeholder={'e.g. 1234 5678 9123 0000'} inputObject={cardNumber} handleInputFieldChange={handleInputFieldChange} />
         
         <div className="grid grid-cols-2 gap-3">
           <ExpirationDateField expirationMonth={expirationMonth} expirationYear={expirationYear} handleInputFieldChange={handleInputFieldChange} />
